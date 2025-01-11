@@ -126,7 +126,7 @@ const Slider = memo(() => {
         .slider-track {
           display: flex; /* Flex layout for items */
           gap: 50px; /* Adjust spacing between logos */
-          animation: scrollLeft 9s linear infinite; /* Adjust duration for speed */
+          animation: scrollLeft 15s linear infinite; /* Default speed for desktop */
         }
 
         @keyframes scrollLeft {
@@ -151,6 +151,13 @@ const Slider = memo(() => {
           width: 100%;
           height: 100%;
           object-fit: contain;
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+          .slider-track {
+            animation: scrollLeft 5s linear infinite; /* Faster speed for mobile */
+          }
         }
       `}</style>
     </div>
