@@ -13,6 +13,7 @@ import WelcomeScreen from "./Pages/WelcomeScreen";
 import { AnimatePresence } from 'framer-motion';
 
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -24,11 +25,13 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
       </AnimatePresence>
 
       {!showWelcome && (
-        <>
+        <>\
+          <Analytics/>
+          <SpeedInsights/>
+
           <Navbar />
           <AnimatedBackground />
           <Home />
-          <Analytics/>
           <About />
           <Slider />
           <Portofolio />
