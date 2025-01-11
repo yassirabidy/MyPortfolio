@@ -55,48 +55,58 @@ const Slider = memo(() => {
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        <div className="item item1">
-          <img src={Logo1} alt="Brand 1" className="logo-image" />
-        </div>
-        <div className="item item2">
-          <img src={Logo2} alt="Brand 2" className="logo-image" />
-        </div>
-        <div className="item item3">
-          <img src={Logo3} alt="Brand 3" className="logo-image" />
-        </div>
-        <div className="item item4">
-          <img src={Logo4} alt="Brand 4" className="logo-image" />
-        </div>
-        <div className="item item5">
-          <img src={Logo5} alt="Brand 5" className="logo-image" />
-        </div>
-        <div className="item item6">
-          <img src={Logo6} alt="Brand 6" className="logo-image" />
+        <div className="slider-track">
+          <div className="item">
+            <img src={Logo1} alt="Brand 1" className="logo-image" />
+          </div>
+          <div className="item">
+            <img src={Logo2} alt="Brand 2" className="logo-image" />
+          </div>
+          <div className="item">
+            <img src={Logo3} alt="Brand 3" className="logo-image" />
+          </div>
+          <div className="item">
+            <img src={Logo4} alt="Brand 4" className="logo-image" />
+          </div>
+          <div className="item">
+            <img src={Logo5} alt="Brand 5" className="logo-image" />
+          </div>
+          <div className="item">
+            <img src={Logo6} alt="Brand 6" className="logo-image" />
+          </div>
+          {/* Repeat logos for seamless scrolling */}
+          <div className="item">
+            <img src={Logo1} alt="Brand 1" className="logo-image" />
+          </div>
+          <div className="item">
+            <img src={Logo2} alt="Brand 2" className="logo-image" />
+          </div>
+          <div className="item">
+            <img src={Logo3} alt="Brand 3" className="logo-image" />
+          </div>
+          <div className="item">
+            <img src={Logo4} alt="Brand 4" className="logo-image" />
+          </div>
+          <div className="item">
+            <img src={Logo5} alt="Brand 5" className="logo-image" />
+          </div>
+          <div className="item">
+            <img src={Logo6} alt="Brand 6" className="logo-image" />
+          </div>
         </div>
       </div>
 
       <style jsx>{`
-        *,
-        *::before,
-        *::after {
-          box-sizing: border-box;
-        }
-
-        * {
-          margin: 0;
-        }
-
         .wrapper {
           width: 90%;
-            max-width: 1536px;
-            margin-inline: auto;
-            margin-top: 1rem;
-            height: 120px; /* Adjust height to fit logos */
-            overflow: hidden;
-            display: flex; /* Flexbox layout */
-            gap: 100px; /* Uniform space between logos */
-            align-items: center;
-            justify-content: center;
+          max-width: 1536px;
+          margin-inline: auto;
+          margin-top: 1rem;
+          height: 120px; /* Adjust height to fit logos */
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          position: relative;
           mask-image: linear-gradient(
             to right,
             rgba(0, 0, 0, 0),
@@ -113,49 +123,28 @@ const Slider = memo(() => {
           );
         }
 
+        .slider-track {
+          display: flex; /* Flex layout for items */
+          gap: 50px; /* Adjust spacing between logos */
+          animation: scrollLeft 9s linear infinite; /* Adjust duration for speed */
+        }
+
         @keyframes scrollLeft {
-          to {
-            left: -200px;
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
           }
         }
 
         .item {
-        flex: 0 0 auto; /* Prevent shrinking */
-        width: 150px; /* Adjust logo width */
+          flex: 0 0 auto; /* Prevent shrinking */
+          width: 150px; /* Adjust logo width */
           height: 100px;
-          position: absolute;
-          left: max(calc(200px * 6), 100%);
-          animation-name: scrollLeft;
-          animation-duration: 30s;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
           display: flex;
           align-items: center;
           justify-content: center;
-        }
-
-        .item1 {
-          animation-delay: calc(30s / 6 * (6 - 1) * -1);
-        }
-
-        .item2 {
-          animation-delay: calc(30s / 6 * (6 - 2) * -1);
-        }
-
-        .item3 {
-          animation-delay: calc(30s / 6 * (6 - 3) * -1);
-        }
-
-        .item4 {
-          animation-delay: calc(30s / 6 * (6 - 4) * -1);
-        }
-
-        .item5 {
-          animation-delay: calc(30s / 6 * (6 - 5) * -1);
-        }
-
-        .item6 {
-          animation-delay: calc(30s / 6 * (6 - 6) * -1);
         }
 
         .logo-image {
