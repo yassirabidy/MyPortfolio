@@ -255,7 +255,7 @@ const ProjectDetails = () => {
               </div>
             </div>
 
-            <div className="space-y-6 md:space-y-10 animate-slideInRight pointer-events-none">
+            <div className="space-y-6 md:space-y-10 animate-slideInRight">
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group pointer-events-none">
               
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
@@ -263,9 +263,9 @@ const ProjectDetails = () => {
                   <iframe
                     src={project.Video}
                     title={project.Title}
-                    className="w-full h-[400px] rounded-2xl"
+                    className="w-full h-[326px] rounded-2xl"
                     frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
                 ) : (
