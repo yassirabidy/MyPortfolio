@@ -125,7 +125,7 @@ const Slider = memo(() => {
 
         .slider-track {
           display: flex; /* Flex layout for items */
-          gap: 100px; /* Adjust spacing between logos */
+          gap: 140px; /* Adjust spacing between logos */
           animation: scrollLeft 15s linear infinite; /* Default speed for desktop */
         }
 
@@ -156,6 +156,7 @@ const Slider = memo(() => {
         /* Mobile-specific styles */
         @media (max-width: 768px) {
           .slider-track {
+            gap: 140px; /* Adjust spacing between logos */
             animation: scrollLeft 5s linear infinite; /* Faster speed for mobile */
           }
         }

@@ -87,7 +87,7 @@ const SocialLinks = () => {
   target="_blank"
   rel="noopener noreferrer"
   className="group relative flex items-center justify-between p-4 rounded-lg 
-             bg-white/10 border border-white/10 overflow-hidden
+             bg-white/5 border border-white/10 overflow-hidden
              hover:border-white/20 transition-all duration-500"
 >
   {/* Hover Gradient Background */}
@@ -150,7 +150,7 @@ const SocialLinks = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="group relative flex items-center gap-3 p-4 rounded-xl 
-                       bg-white/10 border border-white/10 overflow-hidden
+                       bg-white/5 border border-white/10 overflow-hidden
                        hover:border-white/20 transition-all duration-500"
             >
               <div className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500
@@ -199,7 +199,7 @@ const SocialLinks = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="group relative flex items-center gap-3 p-4 rounded-xl 
-                       bg-white/10 border border-white/10 overflow-hidden
+                       bg-white/5 border border-white/10 overflow-hidden
                        hover:border-white/20 transition-all duration-500"
             >
               <div className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500
