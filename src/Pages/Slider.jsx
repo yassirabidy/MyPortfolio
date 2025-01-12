@@ -125,7 +125,7 @@ const Slider = memo(() => {
 
         .slider-track {
           display: flex; /* Flex layout for items */
-          gap: 50px; /* Adjust spacing between logos */
+          gap: 100px; /* Adjust spacing between logos */
           animation: scrollLeft 15s linear infinite; /* Default speed for desktop */
         }
 

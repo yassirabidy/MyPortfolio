@@ -80,7 +80,7 @@ const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
 const WORDS = ["M1 IGOV Student", "Graphic Designer", "Content Creator", "Organizer @MoroccoAI"];
-const TECH_STACK = ["React", "Javascript", "Node.js", "Tailwind"];
+const TECH_STACK = ["React", "Javascript", "Firebase", "Tailwind"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/yassirabidy" },
   { icon: Linkedin, link: "https://www.linkedin.com/in/yassirabidy/" },
