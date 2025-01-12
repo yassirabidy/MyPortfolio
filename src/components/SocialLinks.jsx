@@ -73,7 +73,8 @@ const SocialLinks = () => {
   const [instagram, youtube, github, tiktok] = otherLinks;
 
   return (
-    <div className="w-full bg-slate-900/95 rounded-2xl p-6 py-8">
+    // <div className="w-full bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-6 py-8 backdrop-blur-xl">
+    <div className="w-full bg-gradient-to-br from-slate-900/50 to-slate-900/30 rounded-2xl p-6 py-8 backdrop-blur-xl">
       <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
         <span className="inline-block w-8 h-1 bg-indigo-500 rounded-full"></span>
         Connect With Me
@@ -85,8 +86,11 @@ const SocialLinks = () => {
   href={linkedIn.url}
   target="_blank"
   rel="noopener noreferrer"
+  // className="group relative flex items-center justify-between p-4 rounded-lg 
+  //            bg-white/5 border border-white/10 overflow-hidden
+  //            hover:border-white/20 transition-all duration-500"
   className="group relative flex items-center justify-between p-4 rounded-lg 
-          bg-slate-800/80 border border-white/10 overflow-hidden
+          bg-slate-900/30 border border-white/10 overflow-hidden
           hover:border-white/20 transition-all duration-500"
 >
   {/* Hover Gradient Background */}
@@ -148,9 +152,12 @@ const SocialLinks = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
+              // className="group relative flex items-center gap-3 p-4 rounded-xl 
+              //          bg-white/5 border border-white/10 overflow-hidden
+              //          hover:border-white/20 transition-all duration-500"
               className="group relative flex items-center gap-3 p-4 rounded-xl 
-              bg-slate-800/80 border border-white/10 overflow-hidden
-              hover:border-white/20 transition-all duration-500"
+                        bg-slate-900/30 border border-white/10 overflow-hidden
+                        hover:border-white/20 transition-all duration-500"
             >
               <div className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500
                              bg-gradient-to-r ${link.gradient}`} />
@@ -198,8 +205,8 @@ const SocialLinks = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="group relative flex items-center gap-3 p-4 rounded-xl 
-              bg-slate-800/80 border border-white/10 overflow-hidden
-              hover:border-white/20 transition-all duration-500"
+                       bg-white/5 border border-white/10 overflow-hidden
+                       hover:border-white/20 transition-all duration-500"
             >
               <div className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500
                              bg-gradient-to-r ${link.gradient}`} />
