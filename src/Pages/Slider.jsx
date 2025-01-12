@@ -156,8 +156,8 @@ const Slider = memo(() => {
         /* Mobile-specific styles */
         @media (max-width: 768px) {
           .slider-track {
-            gap: 140px; /* Adjust spacing between logos */
-            animation: scrollLeft 5s linear infinite; /* Faster speed for mobile */
+            gap: 60px; /* Adjust spacing between logos */
+            animation: scrollLeft 7s linear infinite; /* Faster speed for mobile */
           }
         }
       `}</style>
