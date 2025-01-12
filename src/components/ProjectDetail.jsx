@@ -169,13 +169,21 @@ const ProjectDetails = () => {
       <div className="relative">
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-16">
           <div className="flex items-center space-x-2 md:space-x-4 mb-8 md:mb-12 animate-fadeIn">
-            <button
-              onClick={() => navigate(-1)}
-              className="group inline-flex items-center space-x-1.5 md:space-x-2 px-3 md:px-5 py-2 md:py-2.5 bg-white/5 backdrop-blur-xl rounded-xl text-white/90 hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 text-sm md:text-base"
-            >
-              <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 group-hover:-translate-x-1 transition-transform" />
-              <span>Back</span>
-            </button>
+          <button
+            onClick={() => {
+              navigate("/", { replace: true }); // Navigate to home
+              setTimeout(() => {
+                const projectsSection = document.getElementById("projects");
+                if (projectsSection) {
+                  projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              }, 100); // Timeout to ensure navigation is complete
+            }}
+            className="group inline-flex items-center space-x-1.5 md:space-x-2 px-3 md:px-5 py-2 md:py-2.5 bg-white/5 backdrop-blur-xl rounded-xl text-white/90 hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 text-sm md:text-base"
+          >
+            <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 group-hover:-translate-x-1 transition-transform" />
+            <span>Back</span>
+          </button>
             <div className="flex items-center space-x-1 md:space-x-2 text-sm md:text-base text-white/50">
               <span>Projects</span>
               <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
@@ -247,17 +255,30 @@ const ProjectDetails = () => {
               </div>
             </div>
 
-            <div className="space-y-6 md:space-y-10 animate-slideInRight">
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+            <div className="space-y-6 md:space-y-10 animate-slideInRight pointer-events-none">
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group pointer-events-none">
               
-                <div className="absolute inset-0 bg-gradient-to-t from-[#030014] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <img
-                  src={project.Img}
-                  alt={project.Title}
-                  className="w-full  object-cover transform transition-transform duration-700 will-change-transform group-hover:scale-105"
-                  onLoad={() => setIsImageLoaded(true)}
-                />
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                {project.Video ? (
+                  <iframe
+                    src={project.Video}
+                    title={project.Title}
+                    className="w-full h-[400px] rounded-2xl"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <img
+                    src={project.Img}
+                    alt={project.Title}
+                    className="w-full object-cover transform transition-transform duration-700 will-change-transform group-hover:scale-105"
+                    onLoad={() => setIsImageLoaded(true)}
+                  />
+                )}
                 <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/10 transition-colors duration-300 rounded-2xl" />
+              </div>
+
               </div>
 
               {/* Fitur Utama */}

@@ -13,6 +13,11 @@
 	scrollbar-color: rgba(99, 102, 241, 0.3) rgba(12, 5, 53, 0.356);
 }
 
+iframe {
+	pointer-events: auto;
+	z-index: 10; /* Ensure it's above other elements */
+}
+
 html,
 body {
 	overflow-x: hidden;

@@ -6,14 +6,14 @@ import Slider from "./Pages/Slider";
 import About from "./Pages/About";
 import AnimatedBackground from "./components/Background";
 import Navbar from "./components/Navbar";
-import Portofolio from "./Pages/Portofolio";
+import Portofolio from "./Pages/Portofolio"; // Portfolio component with tabs
 import ContactPage from "./Pages/Contact";
 import ProjectDetails from "./components/ProjectDetail";
 import WelcomeScreen from "./Pages/WelcomeScreen";
 import { AnimatePresence } from 'framer-motion';
 
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -25,16 +25,16 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
       </AnimatePresence>
 
       {!showWelcome && (
-        <>\
-          <Analytics/>
-          <SpeedInsights/>
+        <>
+          <Analytics />
+          <SpeedInsights />
 
           <Navbar />
           <AnimatedBackground />
           <Home />
           <About />
           <Slider />
-          <Portofolio />
+          <Portofolio /> {/* Include the Portfolio section */}
           <ContactPage />
           <footer>
             <center>
@@ -78,8 +78,17 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
+        {/* Main landing page */}
+        <Route
+          path="/"
+          element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />}
+        />
+
+        {/* Project details page */}
         <Route path="/project/:id" element={<ProjectPageLayout />} />
+
+        {/* Portfolio page with tabs */}
+        <Route path="/portfolio" element={<Portofolio />} />
       </Routes>
     </BrowserRouter>
   );
