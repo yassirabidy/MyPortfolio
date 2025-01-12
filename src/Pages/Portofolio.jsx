@@ -318,7 +318,7 @@ export default function FullWidthTabs() {
                 Title={project.Title}
                 Description={project.Description}
                 Link={project.Link}
-                id={project.id}
+                slug={project.slug} // Pass slug instead of id
               />
             </div>
           ))}
