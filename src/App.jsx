@@ -89,9 +89,6 @@ function App() {
 
         {/* Portfolio page with tabs */}
         <Route path="/portfolio" element={<Portofolio />} />
-
-        <Route path="/project/:slug" element={<ProjectDetails />} />
-
       </Routes>
     </BrowserRouter>
   );
